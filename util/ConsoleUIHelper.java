@@ -49,10 +49,6 @@ public class ConsoleUIHelper {
     }
 
     public static boolean askConfirm(String message, String yes, String no) {
-        String[] op = new String[2];
-        op[0] = yes;
-        op[1] = no;
-        askChooseOption(message, op);
         return askChooseOption(message, yes, no) == 0;
     }
 
