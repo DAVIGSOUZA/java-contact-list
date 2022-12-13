@@ -2,6 +2,7 @@ package View;
 
 import contactBook.*;
 import util.ConsoleUIHelper;
+import util.JsonHelper;
 
 import java.io.Console;
 import java.util.List;
@@ -51,6 +52,7 @@ public class ContactView {
         try {
             contactBook.addContacts(List.of(newContact));
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -72,6 +74,7 @@ public class ContactView {
         try {
             contact.addPhone(newPhone);
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -105,6 +108,7 @@ public class ContactView {
         try {
             contact.addAddress(newAddress);
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -122,6 +126,7 @@ public class ContactView {
         try {
             contactBook.removeContact(contactIndex);
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -132,6 +137,8 @@ public class ContactView {
 
         if (contacts.isEmpty()) {
             ConsoleUIHelper.drawWithPadding("Nenhum contato cadastrado.");
+            ConsoleUIHelper.fillVSpace(1);
+            ConsoleUIHelper.drawLine();
             return;
         }
 
@@ -215,6 +222,7 @@ public class ContactView {
         try {
             contact.removePhone(phoneIndex);
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -236,6 +244,7 @@ public class ContactView {
         try {
             contact.removeAddress(addressIndex);
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         } catch (RuntimeException e) {
             failedFeedBack(e.getMessage());
         }
@@ -255,6 +264,7 @@ public class ContactView {
         if (confirm) {
             contactBook.removeAllContacts();
             successFeedback();
+            JsonHelper.exportToJson(contactBook);
         }
     }
 }

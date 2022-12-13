@@ -36,6 +36,7 @@ public class ConsoleUIHelper {
         for (int i = 0; i < options.length; i++) {
             System.out.printf("%d - %s%n# : ", i, options[i]);
         }
+
         Scanner sc = new Scanner(System.in);
         int choice;
         do {

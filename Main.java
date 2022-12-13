@@ -1,23 +1,27 @@
 import View.ContactView;
-import contactBook.Contact;
 import contactBook.ContactBook;
 import util.ConsoleUIHelper;
-
-import java.util.Scanner;
+import util.JsonHelper;
 
 public class Main {
     public static void main(String[] args) {
-        ContactBook contactBook = new ContactBook();
+//        ContactBook contactBook = new ContactBook();
+        ConsoleUIHelper.drawLine();
+        ConsoleUIHelper.drawWithPadding("Inicializando aplicação");
+        ConsoleUIHelper.fillVSpace(1);
+
+        ContactBook contactBook = JsonHelper.importFromJson();
+
+        ConsoleUIHelper.fillVSpace(1);
 
         int choice = 0;
-
         do {
 
             ConsoleUIHelper.drawHeader("AGENDA");
             ContactView.showContacts(contactBook);
 
             int option = ConsoleUIHelper.askChooseOption(
-                    "Escolha uma opcaoo",
+                    "Escolha uma opcao",
                     "Ver detalhes de um contato",   //0
                     "Buscar contato pelo nome",             //1
                     "Adicionar contato",                    //2
