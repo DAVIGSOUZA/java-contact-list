@@ -11,6 +11,8 @@ public class Address {
     private CountryState countryState;
     private String zipCode;
 
+    private Address() {}
+
     public Address(
             String name,
             String street,
@@ -29,9 +31,7 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getStreet() {
         return street;
@@ -45,9 +45,7 @@ public class Address {
         return number;
     }
 
-    public String getCity() {
-        return city;
-    }
+    public String getCity() { return city; }
 
     public CountryState getCountryState() {
         return countryState;

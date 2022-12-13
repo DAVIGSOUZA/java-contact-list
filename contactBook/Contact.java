@@ -15,6 +15,8 @@ public class Contact {
     private List<Phone> phones;
     private List<Address> addresses;
 
+    private Contact() {};
+
     public Contact(String name, String lastName, String email) {
         this.name = name;
         this.lastName = lastName;
