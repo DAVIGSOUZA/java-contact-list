@@ -1,11 +1,8 @@
 package contactBook;
 
-import util.ConsoleUIHelper;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 public class ContactBook {
     private List<Contact> contacts;

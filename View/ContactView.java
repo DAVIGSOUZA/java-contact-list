@@ -3,8 +3,6 @@ package View;
 import contactBook.*;
 import util.ConsoleUIHelper;
 import util.JsonHelper;
-
-import java.io.Console;
 import java.util.List;
 
 public class ContactView {
