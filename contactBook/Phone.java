@@ -7,6 +7,13 @@ public class Phone {
     private String ddd;
     private String number;
 
+    public String getName() { return name; }
+
+    public String getDdd() { return ddd; }
+
+    public String getNumber() { return number; }
+
+    private Phone() {}
     public Phone(String name, String ddd, String number) {
         this.name = name;
         this.ddd = ddd;
