@@ -29,11 +29,15 @@ public class ContactView {
 
     public static void contactDetailsByName(ContactBook contactBook) {
         String search = (ConsoleUIHelper.askSimpleInput("Digite sua busca:"));
-        Contact contact = contactBook.getContactByFullName(search);
-        ConsoleUIHelper.drawLine();
-        ConsoleUIHelper.drawWithPadding("DETALHE DO CONTATO");
-        ConsoleUIHelper.drawLine();
-        System.out.println(contact.toString());
+        try {
+            Contact contact = contactBook.getContactByFullName(search);
+            ConsoleUIHelper.drawLine();
+            ConsoleUIHelper.drawWithPadding("DETALHE DO CONTATO");
+            ConsoleUIHelper.drawLine();
+            System.out.println(contact.toString());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void addContact(ContactBook contactBook) {

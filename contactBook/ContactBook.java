@@ -1,8 +1,10 @@
 package contactBook;
 
+import javax.management.InstanceNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class ContactBook {
     private List<Contact> contacts;
@@ -37,10 +39,17 @@ public class ContactBook {
         return this.contacts.get(contactIndex);
     }
 
-    public Contact getContactByFullName(String searchedName) {
-        return this.contacts.stream().filter(
+    public Contact getContactByFullName(String searchedName) throws InstanceNotFoundException {
+        Optional<Contact> search = this.contacts.stream().filter(
                 contact -> contact.getFullName().toLowerCase().contains(searchedName)
-        ).findFirst().get();
+        ).findFirst();
+
+        if (search.isPresent()) {
+            return search.get();
+        }
+
+        throw new InstanceNotFoundException("Contato não encontrado");
+
     }
 
     public void removeContact(int contactIndex) {

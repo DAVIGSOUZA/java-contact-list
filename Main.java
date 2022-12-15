@@ -5,7 +5,6 @@ import util.JsonHelper;
 
 public class Main {
     public static void main(String[] args) {
-//        ContactBook contactBook = new ContactBook();
         ConsoleUIHelper.drawLine();
         ConsoleUIHelper.drawWithPadding("Inicializando aplicação");
         ConsoleUIHelper.fillVSpace(1);
